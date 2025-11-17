@@ -13,14 +13,14 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	color: var(--font-color);
-	background-color: var(--green-black);
+	color: black;
+	background-color: var(--green-white);
 }
 
 nav {
 	background-color: var(--font-color);
 	display: flex;
-	justify-content: center;
+	justify-content: start;
 	align-items: center;
 	flex-direction: row;
 	height: 80px;
@@ -55,8 +55,10 @@ nav ul a.active {
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	position: relative;
+	display: flex;
+	justify-content: center;
 
-	dis &::before {
+	&::before {
 		content: "";
 		background: var(--linear-green);
 		display: flex;
@@ -64,5 +66,62 @@ nav ul a.active {
 		width: 25px;
 		position: absolute;
 		bottom: 0;
+	}
+}
+
+header{
+	color: white;
+}
+
+header .banner {
+	width: 100%;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url(../img/fond/creer-potager-bio-banniere_1_1.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+div.message-title{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	font-family: 'IBM Plex Sans';
+	font-size: 25px;
+	gap: 10px;
+	color: white;
+	
+	&::before{
+		content: '';
+		background: var(--linear-green);
+		width: 100px;
+		height: 5px;
+	}
+}
+
+h1.title{
+	font-family: 'Lobster';
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+
+	font-size: 45px;
+
+	&::after {
+	color: white;
+		content: 'Authentique';
+		background: var(--linear-green);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	&::before{
+		content:"Potager";
 	}
 }
