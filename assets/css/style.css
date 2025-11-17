@@ -1,0 +1,68 @@
+@import url("../css/font.css");
+
+:root {
+	--green-white: #338f09;
+	--font-color: #e0d8ce;
+	--green-black: #173b18;
+	--linear-green: linear-gradient(89.71deg, #173b18 0%, #338f09 100%);
+	--star-color: #ffff00;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: var(--font-color);
+	background-color: var(--green-black);
+}
+
+nav {
+	background-color: var(--font-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	height: 80px;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	gap: 20px;
+}
+
+nav ul img {
+	width: 50px;
+	height: auto;
+}
+
+nav ul a {
+	font-family: "IBM Plex Sans";
+	font-size: 18px;
+	font-style: normal;
+	line-height: 23px;
+	text-decoration: none;
+	color: black;
+}
+
+nav ul a.active {
+	background: var(--linear-green);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	position: relative;
+
+	dis &::before {
+		content: "";
+		background: var(--linear-green);
+		display: flex;
+		height: 1px;
+		width: 25px;
+		position: absolute;
+		bottom: 0;
+	}
+}
