@@ -452,10 +452,73 @@ main section.faq .faq .question ul li input[type="radio"]:checked + label .dot-t
 }
 
 main section.faq .faq .question ul li input[type="radio"]:checked + label i {
-  transform: rotate(90deg);
+ 	transform: rotate(90deg);
 }
 
 /* Affichage dynamique des réponses FAQ */
 main section.faq .faq .answers > div {
-  display: none;
+	transition: .3s ease;
+	display: none;
+}
+
+main section.product {
+    display: flex;
+    justify-content: center;
+	flex-direction: row;
+    align-items: stretch;
+    gap: 24px;
+    width: 80%;
+}
+
+/* Card globale */
+main section.product .product-card {
+    position: relative;
+	width: min-content;
+	height: max-content;
+	overflow: visible;
+    border-radius: 5px;
+    box-shadow: 0px 2px 7.4px rgba(0, 0, 0, 0.25);
+	position: relative;
+}
+
+/* Image de fond */
+main section.product .product-card .card-image {
+    width: 468px;
+    height: 298px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Bloc texte par-dessus l'image */
+main section.product .product-card .card-info {
+	width: 430px;
+	height: 200px;
+    position: absolute;
+    left: 24px;
+  	right: 12px;
+	bottom: -18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    padding: 10px 14px;
+    background: rgba(224, 216, 206, 0.9);
+    box-shadow: 0px 2px 7.4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+	z-index: 999;
+}
+
+main section.product .product-card .card-info h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+main section.product .product-card .card-info p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: justify;
 }

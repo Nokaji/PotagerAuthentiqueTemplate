@@ -55,6 +55,40 @@
 			</div>
 		</section>
 		<hr>
+		<section class="product">
+			<div class="product-card">
+				<img src="assets/img/fond/Tomate.png" alt="Tomates" class="card-image">
+				<div class="card-info">
+					<h4>Tomates</h4>
+					<p>
+						Nos tomates sont cultivées avec soin dans notre potager, à
+						l’abri des produits chimiques et au rythme de la nature.
+						Cueillies à maturité, elles ont ce goût unique de soleil et de
+						fraîcheur que seules les tomates du jardin peuvent offrir.
+						Croquantes, juteuses et pleines de saveurs, elles sont parfaites
+						pour vos salades, vos sauces maison ou simplement à déguster
+						nature, avec un filet d’huile d’olive.
+					</p>
+				</div>
+			</div>
+			<div class="product-card">
+				<img src="assets/img/fond/Patates.png" alt="Patates" class="card-image">
+				<div class="card-info">
+					<h4>Patates</h4>
+					<p>
+						Nos pommes de terre sont cultivées avec soin dans notre potager,
+						sans produits chimiques et dans le respect du rythme de la
+						nature. Récoltées à maturité, elles offrent cette saveur
+						authentique du terroir, à la fois douce et généreuse. Fermes,
+						fondantes et pleines de caractère, elles se prêtent à toutes vos
+						envies : rôties au four, en purée onctueuse, sautées à la poêle
+						ou simplement vapeur, avec une noisette de beurre et une pincée
+						de sel.
+					</p>
+				</div>
+			</div>
+		</section>
+		<hr>
 		<section class="faq">
 			<h2>Conseils & Tutos</h2>
 			<div class="faq">
@@ -128,14 +162,14 @@
 					</div>
 					<div id="answer-4">
 						<h4>Comment se déroule l’achat?</h4>
-						<p>Ce site est avant tout une vitrine : il vous permet de découvrir les  fruits, légumes et produits dérivés actuellement disponibles.  Vous pouvez consulter les nouveautés, vérifier les produits de saison  et préparer votre sélection à l’avance. 
-						 Ensuite, il vous suffit de venir récupérer vos produits à notre point  de vente, où vous pourrez régler votre commande sur place. 
-						  💡 C’est simple, local et toujours en direct avec nous !</p>
+						<p>Ce site est avant tout une vitrine : il vous permet de découvrir les  fruits, légumes et produits dérivés actuellement disponibles. Vous pouvez consulter les nouveautés, vérifier les produits de saison  et préparer votre sélection à l’avance. 
+						Ensuite, il vous suffit de venir récupérer vos produits à notre point  de vente, où vous pourrez régler votre commande sur place. 
+						 💡 C’est simple, local et toujours en direct avec nous !</p>
 					</div>
 					<div id="answer-5">
 						<h4>Vendez-vous du compost ou d’autres produits pour le jardin ?</h4>
 						<p>Oui, en plus de nos fruits et légumes, nous proposons une gamme de produits dérivés pour le jardin : compost, terreau naturel, jus, et parfois des graines ou jeunes plants. 
-						  Nos produits sont choisis pour leur qualité et leur respect de l’environnement, afin de vous aider à entretenir un potager sain et productif toute l’année.</p>
+						 Nos produits sont choisis pour leur qualité et leur respect de l’environnement, afin de vous aider à entretenir un potager sain et productif toute l’année.</p>
 					</div>
 				</div>
 			</div>
@@ -173,9 +207,31 @@
 		</div>
 		</div>
 	</footer>
-	<script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 	<script>
-		(function(){const a=$(".answers>div"),r=$("input[name='faq']");r.on("change",()=>{a.hide();const i=r.index(r.filter(":checked"));i>=0&&a.eq(i).show()}).trigger("change")})();
+		document.addEventListener("DOMContentLoaded", function () {
+			const answers = document.querySelectorAll(".answers > div");
+			const radios = document.querySelectorAll("input[name='faq']");
+
+			function updateAnswers() {
+				answers.forEach((answer) => {
+					answer.style.display = "none";
+				});
+
+				const checked = Array.from(radios).find((r) => r.checked);
+				if (!checked) return;
+
+				const index = Array.from(radios).indexOf(checked);
+				if (index >= 0 && answers[index]) {
+					answers[index].style.display = "block";
+				}
+			} 
+
+			radios.forEach((radio) => {
+				radio.addEventListener("change", updateAnswers);
+			});
+
+			updateAnswers();
+		});
 	</script>
 </body>
 </html>
