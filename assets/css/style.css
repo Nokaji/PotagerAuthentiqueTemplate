@@ -13,17 +13,19 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	color: var(--font-color);
-	background-color: var(--green-black);
+	font-family: 'IBM Plex Sans', sans-serif;
+	color: black;
+	background-color: var(--green-white);
 }
 
 nav {
 	background-color: var(--font-color);
 	display: flex;
-	justify-content: center;
+	justify-content: start;
 	align-items: center;
 	flex-direction: row;
 	height: 80px;
+	width: 100%;
 }
 
 nav ul {
@@ -32,7 +34,7 @@ nav ul {
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
-	gap: 20px;
+	padding: 20px;
 }
 
 nav ul img {
@@ -47,6 +49,7 @@ nav ul a {
 	line-height: 23px;
 	text-decoration: none;
 	color: black;
+	margin: 0 10px;
 }
 
 nav ul a.active {
@@ -55,8 +58,10 @@ nav ul a.active {
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	position: relative;
+	display: flex;
+	justify-content: center;
 
-	dis &::before {
+	&::before {
 		content: "";
 		background: var(--linear-green);
 		display: flex;
@@ -64,5 +69,107 @@ nav ul a.active {
 		width: 25px;
 		position: absolute;
 		bottom: 0;
+	}
+}
+
+header{
+	color: white;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+
+	&::before{
+		content: '';
+		width: 100%;
+		height: 150px;
+		background: url("../img/wave.svg");
+		background-size:  cover;
+		background-repeat: no-repeat;
+		position: absolute;
+		bottom: 0;
+		z-index: 999;
+	}
+
+}
+
+header .banner {
+	width: 100%;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url(../img/fond/creer-potager-bio-banniere_1_1.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+header .banner h4{
+	margin-top: 10px;
+	font-weight: normal;
+	font-size: 24px;
+	color: white;
+}
+
+header .banner img.wave{
+	width: 100%;
+	pointer-events: none;
+	display: block;
+	height: auto;
+}
+
+header .banner div.message-title{
+	display: flex;
+	flex-direction: column;
+	font-size: 25px;
+	color: white;
+}
+
+header .banner div.message-title div.bar{
+	content: '';
+	background: var(--linear-green);
+	width: 100px;
+	height: 5px;
+}
+
+header .banner div.message-title div.messages{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	gap: 10px;
+}
+
+header .banner div.message-title div.messages h1{
+	margin: 0;
+}
+
+header .banner div.message-title div.messages h1.title{
+	font-family: 'Lobster';
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	user-select: text;
+
+	margin: 0;
+	font-size: 45px;
+
+	&::after {
+	color: white;
+		user-select: text;
+		content: 'Authentique';
+		background: var(--linear-green);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	&::before{
+		user-select: text;
+		content:"Potager";
 	}
 }
