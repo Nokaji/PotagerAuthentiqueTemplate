@@ -258,6 +258,7 @@ footer{
 	bottom: 0;
 	width: -moz-available;
 	padding: 20px 5px 20px 5px;
+	margin-top: 40px;
 }
 
 footer hr{
@@ -463,11 +464,37 @@ main section.faq .faq .answers > div {
 
 main section.product {
     display: flex;
-    justify-content: center;
-	flex-direction: row;
-    align-items: stretch;
+    flex-direction: column;   /* liste + bouton en colonne */
+    align-items: stretch;      /* centre horizontalement enfants, donc .link-welcome */
     gap: 24px;
-    width: 80%;
+    width: 90%;
+}
+
+main section.product .wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;  /* centre le bouton horizontalement */
+}
+
+main section.product .product-list {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	align-items: center;
+	gap: 24px;
+	overflow-x: scroll;         /* scroll horizontal */
+	overflow-y: hidden;
+	padding-bottom: 10px;     /* petit espace pour la barre de scroll */
+}
+
+main section.product .link-welcome {
+	padding: 5px 16px;
+	gap: 10px;
+	background: var(--linear-green);
+	border-radius: 5px;
+	color: white;
+	text-decoration: none;
+	width: fit-content;
 }
 
 /* Card globale */
@@ -491,10 +518,10 @@ main section.product .product-card .card-image {
 
 /* Bloc texte par-dessus l'image */
 main section.product .product-card .card-info {
-	width: 430px;
+	width: 380px;
 	height: 200px;
     position: absolute;
-    left: 24px;
+    left: 30px;
   	right: 12px;
 	bottom: -18px;
 
