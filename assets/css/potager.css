@@ -1,8 +1,27 @@
 html,
 body {
 	background-color: var(--font-color) !important;
+
+}
+
+header{
+	&::before{
+		display: none !important;
+	}
 }
 
 .titre {
 	align-items: center;
+}
+
+.grille {
+	display: grid;
+	grid-template-columns: 505px 505px;
+	gap: 20px;
+	margin: 40px;
+}
+
+.grille img {
+	width: 100%;
+	border-radius: 10px;
 }
