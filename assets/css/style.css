@@ -3,6 +3,7 @@
 :root {
 	--green-white: #338f09;
 	--font-color: #e0d8ce;
+	--focus-faq-color: #DACFC1;
 	--green-black: #173b18;
 	--linear-green: linear-gradient(89.71deg, #173b18 0%, #338f09 100%);
 	--star-color: #ffff00;
@@ -72,6 +73,8 @@ nav ul a.active {
 	}
 }
 
+/* Header */
+
 header{
 	color: white;
 	display: flex;
@@ -90,6 +93,7 @@ header{
 		position: absolute;
 		bottom: 0;
 		z-index: 999;
+		pointer-events: none;
 	}
 
 }
@@ -172,4 +176,197 @@ header .banner div.message-title div.messages h1.title{
 		user-select: text;
 		content:"Potager";
 	}
+}
+
+header .banner .link-welcome {
+
+	/* Auto layout */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 5px 16px;
+	gap: 10px;
+	background: var(--linear-green);
+	border-radius: 5px;
+	color: white;
+	text-decoration: none;
+}
+
+/* Main */
+
+main{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Section */
+
+main section{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+main section h2{
+	color: white;
+}
+
+main section.about-us .whoweare{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	gap: 20px;
+}
+
+main section.about-us .whoweare .person{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+main section.about-us .whoweare .person img{
+	width: 100px;
+	height: auto;
+	border-radius: 100px;
+}
+
+main section.about-us .whoweare .person h4{
+	color: white;
+	margin-top: 10px;
+	font-size: 18px;
+}
+
+main hr{
+	width: 80%;
+	background: white;
+	margin: 40px 0;
+	height: 2px;
+}
+
+/* footer */
+
+footer{
+	background-color: var(--green-black);
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	bottom: 0;
+	width: -moz-available;
+	padding: 20px 5px 20px 5px;
+}
+
+footer hr{
+	width: 2px;
+	background: white;
+	margin: 40px 0;
+	height: 60%;
+}
+
+footer .right-footer, footer .left-footer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+footer div.content-footer{
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	flex-direction: column;
+	padding: 0px 20px 0px 20px;
+}
+
+footer div.content-footer.brand{
+	align-items: center!important;
+	width: 125px;
+	user-select: none;
+	-webkit-user-drag: none;
+	pointer-events: none;
+}
+
+footer div.content-footer img{
+	width: 115px;
+	height: auto;
+}
+
+footer div.content-footer h4{
+	color: white;
+	margin: 10px 0;
+}
+
+footer div.content-footer ul{
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	flex-direction: column ;
+	padding-left: 10px;
+	margin: 0;
+}
+
+footer div.content-footer li{
+	list-style-type: none;
+}
+
+footer div.content-footer li a{
+	text-decoration: none;
+	color: white;
+	font-size: 16px;
+}
+
+/* FaQ */
+
+main section.faq .question{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	background-color: white;
+	border-radius: 5px;
+	filter: drop-shadow(-1px 0px 16.4px rgba(0, 0, 0, 0.15));
+	padding: 0;
+	margin: 0;
+}
+
+main section.faq .question ul{
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	flex-direction: column;
+	width: max-content;
+	padding: 0;
+	margin: 0;
+}
+
+main section.faq .question ul li{
+	margin: 10px 0;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	flex-direction: row;
+	height: 72px;
+	width: 100%;
+	margin: 0;
+	padding: 15px 0px 15px 0px;
+	box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.15);
+	background: var(--font-color);
+}
+
+main section.faq .question ul li a.button-faq{
+	text-decoration: none;
+	color: black;
+	font-size: 18px;
+	margin-left: 15px;
+}
+
+main section.faq .question ul li .dot{
+	width: 10px;
+	height: 10px;
+	background: var(--green-white);
+	border-radius: 100px;
 }
