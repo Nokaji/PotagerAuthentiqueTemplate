@@ -97,8 +97,8 @@
 						</li>
 					</ul>
 				</div>
-				<div class="answer">
-					<div id="1">
+				<div class="answers">
+					<div id="answer-1">
 						<h4>Comment conserver les fruits et légumes après l’achat ?</h4>
 						<p>La clé, c’est de respecter les besoins de chaque produit. Les légumes racines (pommes de terre, carottes, oignons) aiment un  endroit frais, sec et à l’abri de la lumière. 
 							<br>
@@ -108,33 +108,34 @@
 							<br>
 						Les légumes à feuilles (salades, herbes) doivent être enveloppés dans un linge humide ou dans un sac en papier pour garder leur fraîcheur. 
 						💡 Évitez les sacs plastiques fermés : ils favorisent l’humidité et accélèrent la décomposition.
-					</p>
+						</p>
 					</div>
-					<div id="2">
+					<div id="answer-2">
 						<h4>Comment bien choisir son terreau ?</h4>
 						<p>Choisissez votre terreau selon le type de plante :
-	Universel pour la plupart des plantes d’intérieur et balconnières.
-	Potager pour les légumes et fruits, plus riche en nutriments.
-	Semis pour jeunes pousses, plus léger et aéré.
-	Acidophile pour hortensias, azalées, rhododendrons.
-
-	💡 Un bon terreau doit être léger, bien drainé et sentir la terre fraîche !</p>
+						Universel pour la plupart des plantes d’intérieur et balconnières.
+						Potager pour les légumes et fruits, plus riche en nutriments.
+						Semis pour jeunes pousses, plus léger et aéré.
+						Acidophile pour hortensias, azalées, rhododendrons.
+							<br> <br>
+						💡 Un bon terreau doit être léger, bien drainé et sentir la terre fraîche !
+					</p>
 					</div>
-					<div id="3">
+					<div id="answer-3">
 						<h4>Comment conserver les fruits et légumes après l’achat ?</h4>
 						<p>Simplifiez vos plantations grâce à notre calendrier des semis et récoltes !
-	Ce  guide pratique vous indique, mois par mois, quand semer, planter et  récolter vos légumes, fruits et aromatiques. Imprimez-le ou gardez-le  sur votre téléphone pour toujours savoir quoi planter à quel moment.</p>
+						Ce  guide pratique vous indique, mois par mois, quand semer, planter et  récolter vos légumes, fruits et aromatiques. Imprimez-le ou gardez-le  sur votre téléphone pour toujours savoir quoi planter à quel moment.</p>
 					</div>
-					<div id="4">
+					<div id="answer-4">
 						<h4>Comment se déroule l’achat?</h4>
 						<p>Ce site est avant tout une vitrine : il vous permet de découvrir les  fruits, légumes et produits dérivés actuellement disponibles.  Vous pouvez consulter les nouveautés, vérifier les produits de saison  et préparer votre sélection à l’avance. 
-	 Ensuite, il vous suffit de venir récupérer vos produits à notre point  de vente, où vous pourrez régler votre commande sur place. 
-	  💡 C’est simple, local et toujours en direct avec nous !</p>
+						 Ensuite, il vous suffit de venir récupérer vos produits à notre point  de vente, où vous pourrez régler votre commande sur place. 
+						  💡 C’est simple, local et toujours en direct avec nous !</p>
 					</div>
-					<div id="5">
+					<div id="answer-5">
 						<h4>Vendez-vous du compost ou d’autres produits pour le jardin ?</h4>
 						<p>Oui, en plus de nos fruits et légumes, nous proposons une gamme de produits dérivés pour le jardin : compost, terreau naturel, jus, et parfois des graines ou jeunes plants. 
-	  Nos produits sont choisis pour leur qualité et leur respect de l’environnement, afin de vous aider à entretenir un potager sain et productif toute l’année.</p>
+						  Nos produits sont choisis pour leur qualité et leur respect de l’environnement, afin de vous aider à entretenir un potager sain et productif toute l’année.</p>
 					</div>
 				</div>
 			</div>
@@ -172,5 +173,9 @@
 		</div>
 		</div>
 	</footer>
+	<script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+	<script>
+		(function(){const a=$(".answers>div"),r=$("input[name='faq']");r.on("change",()=>{a.hide();const i=r.index(r.filter(":checked"));i>=0&&a.eq(i).show()}).trigger("change")})();
+	</script>
 </body>
 </html>
