@@ -1,19 +1,24 @@
 html,
 body {
-	background-color: var(--font-color) !important;
+	background-color: var(--font-color);
+}
+
+main {
+    color: black;
 }
 
 .titre {
-	align-items: center;
+    color: black;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    text-align: center;
 }
-.biopic {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 20px !important;
-    font-size: 50px !important;
 
+.img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
 }
-body {
-    background: red !important;
-}
+
