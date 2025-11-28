@@ -273,29 +273,10 @@
 		</div>
 	</footer>
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			const answers = document.querySelectorAll(".answers > div");
-			const radios = document.querySelectorAll("input[name='faq']");
-
-			function updateAnswers() {
-				answers.forEach((answer) => {
-					answer.style.display = "none";
-				});
-
-				const checked = Array.from(radios).find((r) => r.checked);
-				if (!checked) return;
-
-				const index = Array.from(radios).indexOf(checked);
-				if (index >= 0 && answers[index]) {
-					answers[index].style.display = "block";
-				}
-			} 
-
-			radios.forEach((radio) => {
-				radio.addEventListener("change", updateAnswers);
-			});
-
-			updateAnswers();
+		document.addEventListener("DOMContentLoaded", () => {
+			const A = document.querySelectorAll(".answers>div"), R = document.querySelectorAll("input[name=faq]");
+			const show = () => { A.forEach(a => a.style.display = "none"); const i = [...R].findIndex(r => r.checked); if (i > -1) A[i].style.display = "block"; };
+			R.forEach(r => r.addEventListener("change", show)); show();
 		});
 	</script>
 </body>
