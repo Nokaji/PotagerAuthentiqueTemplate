@@ -321,7 +321,14 @@ footer div.content-footer li a{
 
 /* FaQ */
 
-main section.faq .question{
+main section.faq .faq{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+main section.faq .faq .question{
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -329,9 +336,11 @@ main section.faq .question{
 	filter: drop-shadow(-1px 0px 16.4px rgba(0, 0, 0, 0.15));
 	padding: 0;
 	margin: 0;
+	border-radius: 10px;
+	overflow: hidden;
 }
 
-main section.faq .question ul{
+main section.faq .faq .question ul{
 	display: flex;
 	justify-content: center;
 	align-items: start;
@@ -340,22 +349,35 @@ main section.faq .question ul{
 	padding: 0;
 }
 
-main section.faq .question ul li{
-	margin: 10px 0;
+main section.faq .faq .question ul li{
+	list-style: none;
+	transition: .3s ease;
+	user-select: none;
+}
+
+main section.faq .faq .question ul li label{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: row;
-	height: 72px;
-	width: 100%;
-	margin: 0;
+	height: 62px;
+	width: 640px;
 	padding: 15px;
+	margin: 0;
 	gap: 15px;
 	box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.15);
 	background: var(--font-color);
+	cursor: pointer;
 }
 
-main section.faq .question ul li .dot-text{
+main section.faq .faq .question ul li i {
+  color: var(--green-white);
+  font-size: 20px;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+}
+
+main section.faq .faq .question ul li .dot-text{
 	display: flex;
 	justify-content: start;
 	align-items: center;
@@ -363,16 +385,116 @@ main section.faq .question ul li .dot-text{
 	gap: 15px;
 }
 
-main section.faq .question ul li .dot-text a.button-faq{
+main section.faq .faq .question ul li .dot-text a.button-faq{
 	text-decoration: none;
 	color: black;
 	font-size: 18px;
 	margin-left: 15px;
 }
 
-main section.faq .question ul li .dot-text .dot{
+main section.faq .faq .question ul li .dot-text .dot{
 	width: 30px;
 	height: 30px; 
 	background: var(--green-white);
 	border-radius: 100px;
+}
+
+main section.faq .faq .answer{
+	display: flex;
+	justify-content: end;
+	align-items: start;
+	width: 648px;
+	height: min-content;
+	background-color: var(--font-color);
+	padding: 40px 32px;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+main section.faq .faq .answer h4{
+	font-size: 18px;
+	height: min-content;
+	width: 472px;
+}
+
+main section.faq .faq .answer p{
+	font-size: 16px;
+	line-height: 24px;
+	height: auto;
+	width: 576px;
+}
+
+/* Logic FAQ */
+
+main section.faq .faq .question ul li:active,
+main section.faq .faq .question ul li:focus {
+    background: var(--focus-faq-color);
+}
+
+main section.faq .faq .question ul li:active .dot-text .dot,
+main section.faq .faq .question ul li:focus .dot-text .dot {
+    background: var(--green-black);
+}
+
+/* main section.faq .faq .question ul li:active i, */
+/* Masquer les boutons radio */
+
+main section.faq .faq input[type="radio"]{
+	display: none;
+}
+
+/* Logic FAQ - état coché */
+
+main section.faq .faq .question ul li input[type="radio"]:checked + label{
+	background: var(--focus-faq-color);
+}
+
+main section.faq .faq .question ul li input[type="radio"]:checked + label .dot-text .dot{
+	background: var(--green-black);
+}
+
+main section.faq .faq .question ul li input[type="radio"]:checked + label i {
+  transform: rotate(90deg);
+}
+
+/* Affichage dynamique des réponses FAQ */
+main section.faq .faq .answer > div {
+  display: none;
+}
+
+/* faq-1 → #1 */
+#faq-1:checked ~ .answer #1 {
+  display: block;
+}
+
+/* faq-2 → #2 */
+#faq-2:checked ~ .answer #2 {
+  display: block;
+}
+
+/* faq-3 → #3 */
+#faq-3:checked ~ .answer #3 {
+  display: block;
+}
+
+/* faq-4 → #4 */
+#faq-4:checked ~ .answer #4 {
+  display: block;
+}
+
+/* faq-5 → #5 */
+#faq-5:checked ~ .answer #5 {
+  display: block;
+}
+
+/* Cacher toutes les réponses */
+main section.faq .faq .answer > div {
+  display: none;
+}
+
+/* Lorsque faq-1 est coché → montrer #1 */
+main section.faq .faq .question ul li input#faq-1:checked
+  /* on remonte au .faq parent, puis on cible .answer #1 */
+  :is(+ label, ~ label) ~ .answer #1 {
+  display: block;
 }
