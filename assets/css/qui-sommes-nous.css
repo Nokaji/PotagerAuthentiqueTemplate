@@ -9,8 +9,9 @@ header{
     }
 }
 
-main {
-    color: black;
+main{
+    color : var(--font-color);
+    font-weight: bold;
 }
 
 .titre {
@@ -31,12 +32,13 @@ main {
     flex-direction: column;
     gap: 50px;
     color:var(--font-color);
+}
 .about-us{
     width: 234px;
     height: 180px;
 }
 
-}
+
 .haut{
     display: flex;
     flex-direction: row;
@@ -53,10 +55,20 @@ main {
     gap: 20px;
     
 }
-
 .rse{
-    display:flex;
-    gap: 5px !important;
-    align-items: center;
+    display: flex;
     flex-direction: column;
+    align-items: center; /* Centre le texte et la ligne horizontalement */
+    gap: 0;              /* Supprime l'espace automatique entre les deux */
+    margin: 40px 0;
+}
+.titre-rse{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;           
+    color: var(--font-color);       
+    font-size: 20px;
+    font-weight: bold;
+
 }
