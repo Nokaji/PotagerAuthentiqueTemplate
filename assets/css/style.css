@@ -497,6 +497,12 @@ body {
 	font-family: 'IBM Plex Sans', sans-serif;
 	color: black;
 	background-color: var(--green-white);
+	min-height: 100vh;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
 }
 
 nav {
@@ -566,7 +572,7 @@ header{
 	&::before{
 		content: '';
 		width: 100%;
-		height: 150px;
+		height: clamp(80px, 12vw, 200px);
 		background: url("../img/wave.svg");
 		background-size:  cover;
 		background-repeat: no-repeat;
@@ -679,6 +685,7 @@ main{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	flex: 1;
 }
 
 /* Section */
@@ -734,11 +741,9 @@ footer{
 	background-color: var(--green-black);
 	display: flex;
 	justify-content: space-between;
-	position: relative;
-	bottom: 0;
-	width: -moz-available;
+	width: 100%;
 	padding: 20px 5px 20px 5px;
-	margin-top: 40px;
+	margin-top: auto;
 }
 
 footer hr{
@@ -806,7 +811,7 @@ main section.faq .faq{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
+	margin: 10px 0 40px 0;
 }
 
 main section.faq .faq .question{
@@ -1042,8 +1047,8 @@ body.page-produits header::before {
     display: none !important;
 }
 
-body.page-produits html,
-body.page-produits body {
+html:has(body.page-produits),
+body.page-produits {
     background-color: var(--font-color) !important;
 }
 
@@ -1064,6 +1069,14 @@ body.page-produits body {
 
 .grille-item {
     position: relative;
+	cursor: pointer;
+	box-shadow: -1px 0px 16.4px rgba(0, 0, 0, 0.25);
+	transition: .3s ease;
+	border-radius: 10px;
+	
+	&:hover{
+		box-shadow: none;
+	}
 }
 
 .grille-item img {
